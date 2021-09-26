@@ -1,0 +1,17 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "extends": ["airbnb", "eslint:recommended", "prettier"],
+    "rules": {
+        "semi": [2, "always"],
+        "quotes": ["error", "single"],
+        "import/extensions": "off"
+    }
+}
