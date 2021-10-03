@@ -1,9 +1,9 @@
 const dbConfig = {
-    HOST: 'localhost',
-    DATABASE: 'e_tutor',
-    USER: 'postgres',
-    PASSWORD: 'duction001',
-    DIALECT: 'postgres', // mysql, sqlite, sql
+    HOST: process.env.HOST,
+    DATABASE: process.env.DATABASE,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DIALECT: process.env.DIALECT, // mysql, sqlite, sql
     POOL: {
         max: 5,
         min: 0,
