@@ -12,6 +12,7 @@
     "rules": {
         "semi": [2, "always"],
         "quotes": ["error", "single"],
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
     }
 }
