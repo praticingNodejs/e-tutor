@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { createUser } from '../controllers/users/user.controller.js';
+import { createUser, listUser } from '../controllers/users/user.controller.js';
+import asyncRouter from '../utils/asyncRouter.js';
 
 const router = Router();
 
@@ -14,11 +15,11 @@ export default (app) => {
      * 5. DELETE
      */
 
-    router.get('/', (req, res) => res.send('users success'));
+    router.get('/', asyncRouter(listUser));
 
     router.get('/:id', (req, res) => res.send('users success'));
 
-    router.post('/', createUser);
+    router.post('/', asyncRouter(createUser));
 
     router.patch('/', (req, res) => res.send('users success'));
 

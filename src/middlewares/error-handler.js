@@ -1,17 +1,11 @@
-export const notFound = (_req, res) =>
-    res.status(404).send({
-        statusCode: 404,
-        message: 'Url not found',
-        data: {},
-    });
+import eTutorResponse from '../utils/commonResponse.js';
+import { NOT_FOUND } from '../utils/errorCodes.js';
 
-export const errorHandler = (err, req, res, _next) => {
-    req.locals.message = err.message;
-    res.locals.errors = err;
+export const notFound = (_req, res) => eTutorResponse(res, NOT_FOUND);
 
-    return res.status(err.status || 500).send({
-        statusCode: err.statusCode || 500,
-        message: err.stack,
-        data: {},
+export const errorHandler = (err, _req, res, _next) =>
+    eTutorResponse(res, {
+        statusCode: err.status || 500,
+        code: 'INTERNAL_SERVER',
+        message: err.message,
     });
-};
