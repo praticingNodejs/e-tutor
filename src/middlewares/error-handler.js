@@ -1,5 +1,5 @@
 import eTutorResponse from '../utils/commonResponse.js';
-import { NOT_FOUND } from '../utils/errorCodes.js';
+import { NOT_FOUND } from '../utils/codeResponse.js';
 
 export const notFound = (_req, res) => eTutorResponse(res, NOT_FOUND);
 

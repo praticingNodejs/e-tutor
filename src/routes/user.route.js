@@ -1,5 +1,10 @@
 import { Router } from 'express';
-import { createUser, listUser } from '../controllers/users/user.controller.js';
+import {
+    createUser,
+    getUser,
+    listUser,
+    patchUser,
+} from '../controllers/users/user.controller.js';
 import asyncRouter from '../utils/asyncRouter.js';
 
 const router = Router();
@@ -17,11 +22,11 @@ export default (app) => {
 
     router.get('/', asyncRouter(listUser));
 
-    router.get('/:id', (req, res) => res.send('users success'));
+    router.get('/:id', asyncRouter(getUser));
 
     router.post('/', asyncRouter(createUser));
 
-    router.patch('/', (req, res) => res.send('users success'));
+    router.patch('/:id', asyncRouter(patchUser));
 
     router.delete('/', (req, res) => res.send('users success'));
 };
