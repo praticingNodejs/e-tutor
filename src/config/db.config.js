@@ -1,8 +1,8 @@
 const dbConfig = {
     HOST: process.env.HOST,
     DATABASE: process.env.DATABASE,
-    USER: process.env.USER,
-    PASSWORD: process.env.PASSWORD,
+    USERNAME: process.env.DB_USER,
+    PASSWORD: process.env.DB_PASSWORD,
     DIALECT: process.env.DIALECT, // mysql, sqlite, sql
     POOL: {
         max: 5,

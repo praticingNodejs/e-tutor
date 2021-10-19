@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import { connection, Sequelize } from './index.js';
 
 const USER_TABLE = 'users';
@@ -46,5 +47,9 @@ const User = connection.define(
         timestamps: false,
     },
 );
+
+User.prototype.comparePassword = function comparePassword(userPassword) {
+    return bcrypt.compareSync(userPassword, this.password);
+};
 
 export default User;

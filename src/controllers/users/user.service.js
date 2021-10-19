@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import User from '../../models/user.model.js';
 import {
     CREATE_USER_SUCCESS,
@@ -81,9 +82,10 @@ export const createUserService = async (data) => {
         };
     }
 
+    const salt = bcrypt.genSaltSync(10);
     const newUser = await User.create({
         email,
-        password,
+        password: bcrypt.hashSync(password, salt),
         phone,
         address,
     });
