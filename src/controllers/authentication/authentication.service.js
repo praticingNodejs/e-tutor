@@ -2,6 +2,8 @@ import { fileURLToPath } from 'url';
 import User from '../../models/user.model.js';
 
 import { USER_NOT_FOUND } from '../../utils/codeResponse.js';
+import { generateToken } from '../../utils/token.js';
+
 import { LOGIN_SUCCESSFUL } from './authentication.code.js';
 
 import Logger from '../../libs/logger.js';
@@ -35,8 +37,10 @@ const loginService = async ({ email, password }) => {
 
     return {
         message: LOGIN_SUCCESSFUL,
-        //! TODO: token
-        data: user,
+        data: {
+            user,
+            accessToken: generateToken(user.id),
+        },
     };
 };
 
