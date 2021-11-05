@@ -24,6 +24,11 @@ const User = connection.define(
             allowNull: false,
             field: 'password',
         },
+        role: {
+            type: Sequelize.STRING,
+            defaultValue: 'user',
+            field: 'role',
+        },
         phone: {
             type: Sequelize.STRING,
             field: 'phone',

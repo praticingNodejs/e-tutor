@@ -7,6 +7,7 @@ export const LIST_USERS_NESTED_FIELD = ['id', 'email'];
 export const GET_USERS_NESTED_FIELD = [
     'id',
     'email',
+    'role',
     'phone',
     'address',
     'createdAt',

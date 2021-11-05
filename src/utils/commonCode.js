@@ -9,3 +9,9 @@ export const NOT_AUTHENTICATED = {
     code: 'NOT_AUTHENTICATED',
     message: 'Not authenticated',
 };
+
+export const FORBIDDEN = {
+    statusCode: 403,
+    code: 'FORBIDDEN',
+    message: 'Forbidden',
+};
