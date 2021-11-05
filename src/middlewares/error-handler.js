@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'url';
 import eTutorResponse from '../utils/commonResponse.js';
-import { NOT_FOUND } from '../utils/codeResponse.js';
+import { NOT_FOUND } from '../utils/commonCode.js';
 import Logger from '../libs/logger.js';
 
 const logger = new Logger({ file: fileURLToPath(import.meta.url) });

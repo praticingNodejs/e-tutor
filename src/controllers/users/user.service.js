@@ -8,7 +8,7 @@ import {
     USER_EXISTED,
     USER_ID_INVALID,
     USER_NOT_FOUND,
-} from '../../utils/codeResponse.js';
+} from './user.code.js';
 import parseIntString from '../../utils/parsing.js';
 import {
     DEFAULT_LIMIT,

@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import User from '../../models/user.model.js';
 
-import { USER_NOT_FOUND } from '../../utils/codeResponse.js';
+import { USER_NOT_FOUND } from '../users/user.code.js';
 import { generateToken } from '../../utils/token.js';
 
 import { LOGIN_SUCCESSFUL } from './authentication.code.js';
