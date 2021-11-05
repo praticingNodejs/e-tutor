@@ -8,4 +8,4 @@ export const generateToken = (userId) =>
         expiresIn: parseIntString(tokenConfig.EXPIRE), // millisecond
     });
 
-export const validateToken = () => {};
+export const validateToken = (token) => jwt.verify(token, tokenConfig.SECRET);

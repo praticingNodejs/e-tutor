@@ -14,7 +14,7 @@ export const listUser = async (req, res) => {
 
 export const getUser = async (req, res) => {
     const { message, data } = await getUserById(req.params.id);
-
+    console.log(req.user);
     return eTutorResponse(res, message, data);
 };
 
