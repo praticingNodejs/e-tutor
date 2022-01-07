@@ -23,6 +23,12 @@ export const CREATE_USER_SUCCESS = {
     message: 'Create user successful',
 };
 
+export const UPLOAD_AVATAR_SUCCESSFUL = {
+    statusCode: 200,
+    code: 'UPLOAD_AVATAR_SUCCESSFUL',
+    message: 'Upload user avatar successful',
+};
+
 // 400
 export const USER_EXISTED = {
     statusCode: 400,

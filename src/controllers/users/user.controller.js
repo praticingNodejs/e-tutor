@@ -4,28 +4,25 @@ import {
     getUserById,
     listUserService,
     patchUserService,
+    uploadAvatarService,
 } from './user.service.js';
 
-export const listUser = async (req, res) => {
-    const { message, data } = await listUserService(req.query);
+export const listUser = async (req) => listUserService(req.query);
 
-    return eTutorResponse(res, message, data);
-};
+export const getUser = async (req) => getUserById(req.params.id);
 
-export const getUser = async (req, res) => {
-    const { message, data } = await getUserById(req.params.id);
-    console.log(req.user);
-    return eTutorResponse(res, message, data);
-};
+export const createUser = async (req) => createUserService(req.body);
 
-export const createUser = async (req, res) => {
-    const { message, data } = await createUserService(req.body);
+export const patchUser = async (req) =>
+    patchUserService(req.params.id, req.body);
 
-    return eTutorResponse(res, message, data);
-};
+export const uploadAvatar = async (req, res) => {
+    const { message, data } = await uploadAvatarService(
+        req.params.id,
+        req.body,
+    );
 
-export const patchUser = async (req, res) => {
-    const { message, data } = await patchUserService(req.params.id, req.body);
+    console.log(req.file);
 
     return eTutorResponse(res, message, data);
 };

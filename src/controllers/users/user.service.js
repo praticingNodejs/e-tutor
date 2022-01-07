@@ -5,6 +5,7 @@ import {
     GET_USER_SUCCESS,
     LIST_USER_SUCCESS,
     UPDATE_USER_SUCCESS,
+    UPLOAD_AVATAR_SUCCESSFUL,
     USER_EXISTED,
     USER_ID_INVALID,
     USER_NOT_FOUND,
@@ -117,5 +118,19 @@ export const patchUserService = async (userId, data) => {
     return {
         message: UPDATE_USER_SUCCESS,
         data: updatedUser,
+    };
+};
+
+export const uploadAvatarService = async (userId) => {
+    const user = await getUserById(userId);
+    if (!user.data) {
+        return {
+            message: user.message,
+        };
+    }
+
+    return {
+        message: UPLOAD_AVATAR_SUCCESSFUL,
+        data: {},
     };
 };
